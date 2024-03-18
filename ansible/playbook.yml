@@ -1,0 +1,26 @@
+- name: Configure Database Server
+  hosts: database
+  vars_files:
+    - ./vault.yml # "import" vault file
+  remote_user: admuser # defines user used, by default Ansible will ssh via root
+  roles: # roles will be executed in order
+    - create_user
+    - add_ssh_keys
+
+- name: Configure Docker Server
+  hosts: docker
+  vars_files:
+    - ./vault.yml # "import" vault file
+  remote_user: admuser # defines user used, by default Ansible will ssh via root
+  roles: # roles will be executed in order
+    - create_user
+    - add_ssh_keys
+
+- name: Configure Web Server
+  hosts: web
+  vars_files:
+    - ./vault.yml # "import" vault file
+  remote_user: admuser # defines user used, by default Ansible will ssh via root
+  roles: # roles will be executed in order
+    - create_user
+    - add_ssh_keys
