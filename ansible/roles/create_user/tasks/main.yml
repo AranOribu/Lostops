@@ -1,0 +1,21 @@
+- name: Create a non-root user to login
+  become: yes
+  ansible.builtin.user:
+      name: lostops
+      password: $6$gkB.lvVVNAv9D535$Vbqs1kNxc/YTR.ZZbBqqKzRicOF8y.cpGo1Xm2hrwjHCH6G9jJ7dEAwIXanJzfXYB6KFnRnuc2XXFuB2cKwPM0
+      state: present
+      shell: /bin/bash
+      system: no
+      createhome: yes
+      home: /home/lostops
+
+- name: Allow lostops user to run specific commands only
+  become: yes
+  community.general.sudoers:
+    name: allow-lostops
+    state: present
+    user: lostops
+    validation: absent
+    commands:
+      - /usr/bin/apt update
+      - /usr/bin/apt dist-upgrade

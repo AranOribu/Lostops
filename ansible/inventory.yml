@@ -1,0 +1,15 @@
+database: # corresponding to "host: database" in playbook
+  hosts:
+    database:
+        ansible_host: app-database
+
+docker: # corresponding to "host: docker" in playbook
+  hosts:
+    docker:
+        ansible_host: app-docker
+
+web: # corresponding to "host: web" in playbook
+  hosts:
+    web:
+        ansible_host: app-web
+

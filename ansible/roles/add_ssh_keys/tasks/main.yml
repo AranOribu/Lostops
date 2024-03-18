@@ -1,0 +1,6 @@
+- name: Import SSH public keys
+  become: yes
+  ansible.posix.authorized_key:
+    user: lostops
+    key: "{{ ssh_public_keys }}"
+    state: present
