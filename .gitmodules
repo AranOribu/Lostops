@@ -1,8 +1,8 @@
 [submodule "Source code"]
 	path = lostops-app
-	url = git@github.com:AegirVOD/lostops-app.git
+	url = git@github.com:lostops-stg5/lostops-app.git
 	branch = main
 [submodule "Admin sys tools"]
 	path = lostops-adminsys
-	url = git@github.com:mankoty567/lostops-adminsys.git
-	branch = main
+	url = git@github.com:lostops-stg5/lostops-adminsys.git
+	branch = develop
