@@ -21,7 +21,7 @@ The second one is the security scanning of our recently built image, that indica
 
 The last one take care about connecting to remote server, and updating the version of our application by using docker.
 
-![Example of unit test when merging code.](images/ci.png)
+![Example of unit test when merging code.](images/cd.png)
 [Pipeline available here](https://github.com/lostops-stg5/lostops-app/actions/runs/8686574086)
 
 # Tools used
