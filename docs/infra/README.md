@@ -1,5 +1,30 @@
 # Lostops Infrastructure
 
+## Project structure
+
+```Text
+doc/
+├─ infra/
+lostops-adminsys/
+├─ ansible/
+├─ terraform/
+lostops-app/
+├─ ...
+reports/
+├─ pipelines.md
+├─ infra_tests.md
+```
+
+There is two main directory :
+
+- **lostops-adminsys :** include everything about manual operations.
+- **lostops-app :** include web application and scripts from code workflow.
+
+You can find two more diretories, used to keeps documentations :
+
+- **reports :** every reports made after internal audit, to retrieve each Key Performance Indicators about our infrastructure.
+- **docs :** documentations aimed for our teams. DevOps, AdminSys or devs.
+
 ## Server Structure
 
 The Lostops Infrastructure is composed of 3 servers:
