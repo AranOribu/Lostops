@@ -20,7 +20,7 @@ There is two main directory :
 - **lostops-adminsys :** include everything about manual operations.
 - **lostops-app :** include web application and scripts from code workflow.
 
-You can find two more diretories, used to keeps documentations :
+You can find two more diretories, used to keep documentations :
 
 - **reports :** every reports made after internal audit, to retrieve each Key Performance Indicators about our infrastructure.
 - **docs :** documentations aimed for our teams. DevOps, AdminSys or devs.
@@ -76,13 +76,15 @@ Used to manage each container, that contains applications or tools. Used to host
 
 #### Traefik
 
-Network management and service discovery, it serves each applications and exposes it to public addresses and domaine name.
+Network management and service discovery, it serves each applications and exposes it to public addresses and domain name.
 
 #### MySQL (8.0)
 
-Data storage and persistance for applications throught virtual machine reboot.
+Data storage and persistance for applications through virtual machine reboot.
 
-# Continuous Integration pipeline
+# Ours pipelines
+
+## Continuous Integration pipeline
 
 When creating a merge request or pushing on main, all unit tests is launched to ensure that we doesn't get any regressions on this application.
 
@@ -120,4 +122,4 @@ The last one take care about connecting to remote server, and updating the versi
 
 ---
 
-![Ansible icon](images/Ansible_logo.svg) Ansible : connect to remote server using SSH and do automated scripts.
+![Ansible icon](images/Ansible_logo.svg) Ansible : connect to remote server using SSH and run automated scripts.
