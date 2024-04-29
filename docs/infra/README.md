@@ -48,6 +48,38 @@ The database server is the server where we launch a mysql database instance with
 
 The monitoring server is the server where we launch Prometheus and Grafana. Besides SSH access via port, it should be reachable from the internet via port 80 and 443, and the connection should be restricted to HTTPS.
 
+## Monitoring Structure
+
+To monitor our different servers, we have 4 dashboards on Grafana.
+We display on all dashboards (except the global one) a view, that we can filter by VM. To do so, we configured Grafana following the endpoints targeted on Prometheus, for each Exporter.
+
+### LostOps Global Overview
+
+Used to get a synthesis of our VMs (status, RAM/CPU/Memory usage).
+![View of LotsOps Global Overview's dashboard.](images/LostOps_Global_Overview.png)
+
+### LostOps Individual VM
+
+Used to get more detailed metrics for each VM, using Node Exporter (memory, disk, CPU usage...).
+![View of LotsOps Individual VM's dashboard.](images/LostOps_Individual_VM.png)
+
+### LostOps Traefik Monitoring
+
+Used to get metrics for network and HTTPS requests (activity flow, return codes 400 & 500).
+![View of LotsOps Traefik Monitoring's dashboard.](images/LostOps_Traefik_Monitoring.png)
+
+### LostOps MySQL Monitoring
+
+Used to get metrics for the database (QPS, load, performance...).
+![View of LotsOps Mysql Monitoring's dashboard.](images/LostOps_Mysql_Monitoring.png)
+
+### Automated alerts
+
+We used AlertManager to detect incidents and send alert via our Discord, such as CPU/RAM usage above 85%, saturated memory of a VM (above 90%) and also VM's status.
+
+Example of alert
+![Example of alert](images/AlertManager.png)
+
 ## Tools Used
 
 ### IaC (Infrastructure as Code) Tools
@@ -68,7 +100,7 @@ Monitoring data collection tools, functions with a main Prometheus instance and 
 
 #### Grafana
 
-Dashboard and monitoring tool, used to send alerts on message application like discord. Each metric will be humain readable, on a web interface exposed.
+Dashboard and monitoring tool, used to send alerts on message application like discord. Each metric will be human readable, on a web interface exposed.
 
 #### Docker
 
@@ -82,7 +114,7 @@ Network management and service discovery, it serves each applications and expose
 
 Data storage and persistance for applications through virtual machine reboot.
 
-# Ours pipelines
+# Our pipelines
 
 ## Continuous Integration pipeline
 
