@@ -48,6 +48,42 @@ The database server is the server where we launch a mysql database instance with
 
 The monitoring server is the server where we launch Prometheus and Grafana. Besides SSH access via port, it should be reachable from the internet via port 80 and 443, and the connection should be restricted to HTTPS.
 
+## Monitoring Structure
+
+To monitor our different servers, we have 4 dashboards on Grafana.
+We display on all dashboards (except the global one) a view, that we can filter by VM. To do so, we configured Grafana following the endpoints targeted on Prometheus, for each Exporter.
+
+### LostOps Global Overview
+
+Used to get a synthesis of our VMs (status, RAM/CPU/Memory usage).
+![View of LostOps Global Overview's dashboard.](images/LostOps_Global_Overview.png)
+[Go to LostOps Global Overview's dashboard](https://grafana.lostops.notmuji.com/d/fdi81csqaiy9sa/lostops-global-overview?orgId=1&refresh=10s)
+
+### LostOps Individual VM
+
+Used to get more detailed metrics for each VM, using Node Exporter (memory, disk, CPU usage...).
+![View of LostOps Individual VM's dashboard.](images/LostOps_Individual_VM.png)
+[Go to LostOps Individual VM's dashboard](https://grafana.lostops.notmuji.com/d/rYdddlPWk/lostops-individual-vm?orgId=1&refresh=10s)
+
+### LostOps Traefik Monitoring
+
+Used to get metrics for network and HTTPS requests (activity flow, return codes 400 & 500).
+![View of LostOps Traefik Monitoring's dashboard.](images/LostOps_Traefik_Monitoring.png)
+[Go to LostOps Traefik Monitoring's dashboard](https://grafana.lostops.notmuji.com/d/3ipsWfViz/lostops-traefik-monitoring?orgId=1)
+
+### LostOps MySQL Monitoring
+
+Used to get metrics for the database (QPS, load, performance...).
+![View of LostOps Mysql Monitoring's dashboard.](images/LostOps_Mysql_Monitoring.png)
+[Go to LostOps Mysql Monitoring's dashboard](https://grafana.lostops.notmuji.com/d/549c2bf8936f7767ea6ac47c47b00f2a/lostops-mysql-monitoring?orgId=1&refresh=10s)
+
+### Automated alerts
+
+We used AlertManager to detect incidents and send alert via our Discord, such as CPU/RAM usage above 85%, saturated memory of a VM (above 90%) and also VM's status.
+
+Example of alert
+![Example of alert](images/AlertManager.png)
+
 ## Tools Used
 
 ### IaC (Infrastructure as Code) Tools
@@ -68,7 +104,7 @@ Monitoring data collection tools, functions with a main Prometheus instance and 
 
 #### Grafana
 
-Dashboard and monitoring tool, used to send alerts on message application like discord. Each metric will be humain readable, on a web interface exposed.
+Dashboard and monitoring tool, used to send alerts on message application like discord. Each metric will be human readable, on a web interface exposed.
 
 #### Docker
 
@@ -82,7 +118,7 @@ Network management and service discovery, it serves each applications and expose
 
 Data storage and persistance for applications through virtual machine reboot.
 
-# Ours pipelines
+# Our pipelines
 
 ## Continuous Integration pipeline
 
