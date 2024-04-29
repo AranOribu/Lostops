@@ -56,22 +56,26 @@ We display on all dashboards (except the global one) a view, that we can filter 
 ### LostOps Global Overview
 
 Used to get a synthesis of our VMs (status, RAM/CPU/Memory usage).
-![View of LotsOps Global Overview's dashboard.](images/LostOps_Global_Overview.png)
+![View of LostOps Global Overview's dashboard.](images/LostOps_Global_Overview.png)
+[Go to LostOps Global Overview's dashboard](https://grafana.lostops.notmuji.com/d/fdi81csqaiy9sa/lostops-global-overview?orgId=1&refresh=10s)
 
 ### LostOps Individual VM
 
 Used to get more detailed metrics for each VM, using Node Exporter (memory, disk, CPU usage...).
-![View of LotsOps Individual VM's dashboard.](images/LostOps_Individual_VM.png)
+![View of LostOps Individual VM's dashboard.](images/LostOps_Individual_VM.png)
+[Go to LostOps Individual VM's dashboard](https://grafana.lostops.notmuji.com/d/rYdddlPWk/lostops-individual-vm?orgId=1&refresh=10s)
 
 ### LostOps Traefik Monitoring
 
 Used to get metrics for network and HTTPS requests (activity flow, return codes 400 & 500).
-![View of LotsOps Traefik Monitoring's dashboard.](images/LostOps_Traefik_Monitoring.png)
+![View of LostOps Traefik Monitoring's dashboard.](images/LostOps_Traefik_Monitoring.png)
+[Go to LostOps Traefik Monitoring's dashboard](https://grafana.lostops.notmuji.com/d/3ipsWfViz/lostops-traefik-monitoring?orgId=1)
 
 ### LostOps MySQL Monitoring
 
 Used to get metrics for the database (QPS, load, performance...).
-![View of LotsOps Mysql Monitoring's dashboard.](images/LostOps_Mysql_Monitoring.png)
+![View of LostOps Mysql Monitoring's dashboard.](images/LostOps_Mysql_Monitoring.png)
+[Go to LostOps Mysql Monitoring's dashboard](https://grafana.lostops.notmuji.com/d/549c2bf8936f7767ea6ac47c47b00f2a/lostops-mysql-monitoring?orgId=1&refresh=10s)
 
 ### Automated alerts
 
