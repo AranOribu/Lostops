@@ -34,6 +34,7 @@ The Lostops Infrastructure is composed of 3 servers:
 - Monitoring Server
 
 The servers are VMs hosted by Azure, the DevOps team does not have the permission to create or modify the nature (flavor, image...) of the VMs.
+![Image that shows the complete infrastructure](./images/lostops_infra.drawio.svg)
 
 ### Backend Server
 
